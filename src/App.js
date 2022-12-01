@@ -7,6 +7,7 @@ import Button from "./components/UI/Button/Button";
 function App() {
   const [showParagraph, setShowParagraph] = useState(false); // when the state changes, the component will re-render
   console.log("APP RUNNING");
+
   const toggleParagraphHandler = useCallback(() => {
     setShowParagraph((prevShowParagraph) => !prevShowParagraph);
   }, []); // useCallback() will only re-create the function if the dependencies change
@@ -43,7 +44,7 @@ got to know that
 */
 
 /*
-PREVENTING FUNCTION RE-CREATION WITH useCallback()
+video no. 155 PREVENTING FUNCTION RE-CREATION WITH useCallback()
 what does useCallback() do?
 1. useCallback() is a hook which returns a memoized version of the callback function that only changes if one of the dependencies has changed.
 2. if we pass an empty array as a second argument to useCallback(), it will return a memoized version of the callback function that will never change.
