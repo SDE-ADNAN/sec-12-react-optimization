@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import "./App.css";
 import DemoOutput from "./components/Demo/DemoOutput";
 import Button from "./components/UI/Button/Button";
 
 function App() {
-  console.log("APP RUNNING");
   const [showParagraph, setShowParagraph] = useState(false); // when the state changes, the component will re-render
+  console.log("APP RUNNING");
+  const toggleParagraphHandler = useCallback(() => {
+    setShowParagraph((prevShowParagraph) => !prevShowParagraph);
+  }, []); // useCallback() will only re-create the function if the dependencies change
+
   // whenever the showParagraph changes, the component will re-render
   return (
     <div className="app">
       <h1>Hi there!</h1>
       <DemoOutput show={false} />
-      <Button onClick={() => setShowParagraph(!showParagraph)}>
-        Toggle Paragraph!
-      </Button>
+      <Button onClick={toggleParagraphHandler}>Toggle Paragraph!</Button>
     </div>
   );
 }
@@ -38,4 +40,12 @@ got to know that
    re-renders, the function will be recreated and the child component will be re-rendered
    and in this case react.memo() will not work.
 
+*/
+
+/*
+PREVENTING FUNCTION RE-CREATION WITH useCallback()
+what does useCallback() do?
+1. useCallback() is a hook which returns a memoized version of the callback function that only changes if one of the dependencies has changed.
+2. if we pass an empty array as a second argument to useCallback(), it will return a memoized version of the callback function that will never change.
+3. we are not needed to pass stateupdating function to useCallback() as a dependency because it is not changing as gauranteed by react.
 */
