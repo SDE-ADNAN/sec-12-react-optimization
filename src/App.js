@@ -58,3 +58,14 @@ what does useCallback() do?
 2. if we pass an empty array as a second argument to useCallback(), it will return a memoized version of the callback function that will never change.
 3. we are not needed to pass stateupdating function to useCallback() as a dependency because it is not changing as gauranteed by react.
 */
+
+/*
+video no. 156 useCallback() AND its DEPENDENCIES
+1. useCallback() will only re-create the function if the dependencies change.
+2. we must pass values to useCallback() as dependencies which are used in the callback function.
+   to let useCallback() know when to re-create the function.( ans. when the dependencies change)
+3. functions are closures. so if we use a function inside a component, it will have access to all the variables
+    which are in the scope of the component.
+4. so therefore its a need to pass all the variables which are used in the callback function to useCallback() as dependencies.
+   to help useCallback() to know when to re-create the function. and update the function. with the latest values of the (lexical scope)variables/closure variables .
+*/
