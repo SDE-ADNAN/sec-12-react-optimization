@@ -61,7 +61,7 @@ what does useCallback() do?
 
 /*
 video no. 156 useCallback() AND its DEPENDENCIES
-1. useCallback() will only re-create the function if the dependencies change.
+1. useCallback() will only re-create the function if the dependencies change.q
 2. we must pass values to useCallback() as dependencies which are used in the callback function.
    to let useCallback() know when to re-create the function.( ans. when the dependencies change)
 3. functions are closures. so if we use a function inside a component, it will have access to all the variables
