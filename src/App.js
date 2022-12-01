@@ -5,18 +5,26 @@ import DemoOutput from "./components/Demo/DemoOutput";
 import Button from "./components/UI/Button/Button";
 
 function App() {
-  const [showParagraph, setShowParagraph] = useState(false); // when the state changes, the component will re-render
+  const [showParagraph, setShowParagraph] = useState(false);
+  const [allowToggle, setAllowToggle] = useState(false);
   console.log("APP RUNNING");
 
   const toggleParagraphHandler = useCallback(() => {
-    setShowParagraph((prevShowParagraph) => !prevShowParagraph);
-  }, []); // useCallback() will only re-create the function if the dependencies change
+    if (allowToggle) {
+      setShowParagraph((prevShowParagraph) => !prevShowParagraph);
+    }
+  }, [allowToggle]); // useCallback() will only re-create the function if the dependencies change
+
+  const allowToggleHandler = () => {
+    setAllowToggle(true);
+  };
 
   // whenever the showParagraph changes, the component will re-render
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      <DemoOutput show={false} />
+      <DemoOutput show={showParagraph} />
+      <Button onClick={allowToggleHandler}>Allow toggling!</Button>
       <Button onClick={toggleParagraphHandler}>Toggle Paragraph!</Button>
     </div>
   );
