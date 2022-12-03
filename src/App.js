@@ -121,5 +121,11 @@ topics revised:
   3. we can use useMemo() to optimize expensive calculations like sorting array items ,filtering array items etc.
   4. like useCallback() we can pass an empty array as a second argument to useMemo() to tell react to never re-compute the memoized value.
   5. like useCallback() we must pass values to useMemo() as dependencies which are used in the memoized value.
-  
+  6. SYNTAX::::
+      const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+      const sortedList = useMemo(() => {
+        return props.items.sort((a, b) => a - b);
+      }, [props.items]);
+      
   */
