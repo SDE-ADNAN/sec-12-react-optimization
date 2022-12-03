@@ -69,3 +69,16 @@ video no. 156 useCallback() AND its DEPENDENCIES
 4. so therefore its a need to pass all the variables which are used in the callback function to useCallback() as dependencies.
    to help useCallback() to know when to re-create the function. and update the function. with the latest values of the (lexical scope)variables/closure variables .
 */
+
+/*
+157 A FIRST SUMMARY
+
+Must watch this video when need a quick revision
+topics revised:
+1. how react and props work
+2. how react forwards all dom related work to reactDOM and then virtualDOM
+3. realDOM
+4. React.memo()
+5. useCallback().
+
+*/
