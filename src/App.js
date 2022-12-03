@@ -80,5 +80,23 @@ topics revised:
 3. realDOM
 4. React.memo()
 5. useCallback().
-
 */
+
+/*
+158 A CLOSER LOOK AT STATE AND COMPONENTS
+
+1. components and their interaction with state is core concept of react.
+2. as component re-rendering happens only due to state changes, so we must know how state works.
+3. state is a special property of a component which can be managed from inside the component.
+4. As react is the one who handles all our state with help of useState() hook
+   It persists the initial value that we  pass while initializing/using the 
+   useState() hook and checks for subsiquent updates whenever the component 
+   in which this state is, is re-rendered. It never changes state on its own
+   but only updates the state when we call the state updating function.
+   and we pass a new value, or else react has the same value which we 
+   passed initially or which it got and updated from the previous state update.
+5. therefore react only updates state while on-going state-update and components
+   rerender cycles when we pass a new state value via stateupdating unction or 
+   else it uses the same state which it has stored previously maybe when we initialized
+   or may be from the previous state update.
+   */
