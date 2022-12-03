@@ -102,7 +102,7 @@ topics revised:
    */
 
 /*
-  158 UNDERSTANDING STATE SCHEDULING AND BATCHING
+  159 UNDERSTANDING STATE SCHEDULING AND BATCHING
 
   1. react batches state updates and schedules them to be executed at a later time.
   2. react does this to optimize performance.
@@ -113,3 +113,13 @@ topics revised:
   7. react does not updates the state immidiately when we call the state updating function.
   8. react updates the state after the current state update cycle is completed this is scheduling
    */
+
+/*
+  160 OPTIMIZING WITH USEMEMO()
+  1. useMemo() is a hook which returns a memoized value.
+  2. useMemo() will only re-compute the memoized value if one of the dependencies has changed.
+  3. we can use useMemo() to optimize expensive calculations like sorting array items ,filtering array items etc.
+  4. like useCallback() we can pass an empty array as a second argument to useMemo() to tell react to never re-compute the memoized value.
+  5. like useCallback() we must pass values to useMemo() as dependencies which are used in the memoized value.
+  
+  */
