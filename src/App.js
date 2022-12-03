@@ -100,3 +100,16 @@ topics revised:
    else it uses the same state which it has stored previously maybe when we initialized
    or may be from the previous state update.
    */
+
+/*
+  158 UNDERSTANDING STATE SCHEDULING AND BATCHING
+
+  1. react batches state updates and schedules them to be executed at a later time.
+  2. react does this to optimize performance.
+  3. react does this to avoid unnecessary re-rendering of components.
+  4. react does this to avoid unnecessary re-evaluation of state updating functions.
+  5. react does this to avoid unnecessary re-execution of side-effects.
+  6. react does this to avoid unnecessary re-execution of expensive calculations.
+  7. react does not updates the state immidiately when we call the state updating function.
+  8. react updates the state after the current state update cycle is completed this is scheduling
+   */
